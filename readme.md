@@ -7,8 +7,8 @@
 2. Set add VC path to enviroment *PATH* variable
 
 	set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin
-	# in my case is Visual Studio 2013
-	# replace path to your Visual Studio installed version
+	REM in my case is Visual Studio 2013
+	REM replace path to your Visual Studio installed version
 	
 3. Dump export symbol form you dll
 
@@ -16,7 +16,7 @@
 	
 4. Remove unnecessary text, only keep exports symbol
 
-. dumpbin export follow
+- dumpbin export follow
 
 	Microsoft (R) COFF/PE Dumper Version 12.00.21005.1
 	Copyright (C) Microsoft Corporation.  All rights reserved.
@@ -64,7 +64,7 @@
         1000 .rsrc
        75000 .text
 	   
-. After remove unnecessary text and add EXPORTS to begin of file
+- After remove unnecessary text and add EXPORTS to begin of file
 
 	EXPORTS
 	??0__non_rtti_object@@QEAA@AEBV0@@Z
@@ -89,7 +89,6 @@
 
 	lib /DEF:D:\imsvcrt.def /OUT:D:\imsvcrt.lib
 	
-	
 Now you can use this lib to link with your project
 
 
@@ -104,11 +103,9 @@ It guid only for C source (C++ is harder, but it possible)
 	C/C++ -> Code Genration
 		Runtime Library: /MT
 		Security Check: /GS-
-		
 	Linker -> Input
 		Additional Dependencies: imsvcrt.lib
 		Ignore All Default Libraries: YES
-	
 	Linker -> Advanced
 		Entry Point: main
 		
