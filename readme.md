@@ -7,8 +7,8 @@
 2. Set add VC path to enviroment *PATH* variable
 
 	set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin
-	# in my case is Visual Studio 2013
-	# replace path to your Visual Studio installed version
+	;in my case is Visual Studio 2013
+	;replace path to your Visual Studio installed version
 	
 3. Dump export symbol form you dll
 
